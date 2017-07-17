@@ -260,7 +260,7 @@ if (typeof Snap != 'undefined') {
    * SnapHandTheme
    ******************/
 
-  var SnapHandTheme = function(diagram, options, resume) {
+  var SnapHandTheme = function(diagram, options, resume, element) {
         _.defaults(options, {
             'css-class': 'hand',
             'font-size': 16,

@@ -166,7 +166,7 @@ if (typeof Raphael != 'undefined') {
    * RaphaelHandTheme
    ******************/
 
-  var RaphaelHandTheme = function(diagram, options, resume) {
+  var RaphaelHandTheme = function(diagram, options, resume, element) {
     this.element = element;
     this.init(diagram, _.defaults(options, {
               'font-size': 16,
