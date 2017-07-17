@@ -1331,6 +1331,12 @@ if (typeof Snap != 'undefined') {
             var that = this;
             this.waitForFont(function() {
               resume(that);
+
+              var svg = that.element.children[0];
+              svg.setAttribute('viewBox', '0 0 ' + svg.getBBox().width + ' ' + svg.getBBox().height);
+              svg.setAttribute('preserveAspectRatio', 'xMinYMax meet');
+              svg.removeAttribute('width');
+              svg.removeAttribute('height');
             });
           },
 
@@ -1616,6 +1622,11 @@ if (typeof Raphael != 'undefined') {
       l[LINETYPE.DOTTED] = '-';
 
       resume(this);
+      var svg = that.element.children[0];
+      svg.setAttribute('viewBox', '0 0 ' + svg.getBBox().width + ' ' + svg.getBBox().height);
+      svg.setAttribute('preserveAspectRatio', 'xMinYMax meet');
+      svg.removeAttribute('width');
+      svg.removeAttribute('height');
     },
 
     setupPaper: function(container) {
