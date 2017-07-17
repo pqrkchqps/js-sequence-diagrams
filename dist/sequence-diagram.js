@@ -1330,6 +1330,11 @@ if (typeof Snap != 'undefined') {
             var that = this;
             this.waitForFont(function() {
               resume(that);
+              var svg = that.element.children[0];
+              svg.setAttribute("viewBox", "0 0 "+svg.getBBox().width+" "+svg.getBBox().height);
+              svg.setAttribute("preserveAspectRatio", "xMinYMax meet");
+              svg.removeAttribute('width');
+              svg.removeAttribute('height');
             });
           },
 
@@ -1524,13 +1529,13 @@ if (typeof Snap != 'undefined') {
    * SnapHandTheme
    ******************/
 
-  var SnapHandTheme = function(diagram, options, resume) {
+  var SnapHandTheme = function(diagram, options, resume, element) {
         _.defaults(options, {
             'css-class': 'hand',
             'font-size': 16,
             'font-family': 'danielbd'
           });
-
+	this.element = element;
         this.init(diagram, options, resume);
       };
 
@@ -2700,7 +2705,7 @@ Diagram.prototype.drawSVG = function(container, options) {
   var Theme = Diagram.themes[options.theme];
   new Theme(this, options, function(drawing) {
       drawing.draw(div);
-    });
+    }, div);
 }; // end of drawSVG
 /** js sequence diagrams
  *  https://bramp.github.io/js-sequence-diagrams/
