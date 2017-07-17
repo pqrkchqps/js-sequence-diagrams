@@ -1537,6 +1537,7 @@ if (typeof Snap != 'undefined') {
             'font-family': 'danielbd'
           });
 
+        this.element = element;
         this.init(diagram, options, resume);
       };
 

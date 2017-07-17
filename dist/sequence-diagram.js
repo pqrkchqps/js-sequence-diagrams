@@ -1537,6 +1537,7 @@ if (typeof Snap != 'undefined') {
             'font-family': 'danielbd'
           });
 
+        this.element = element;
         this.init(diagram, options, resume);
       };
 
@@ -1732,6 +1733,7 @@ if (typeof Raphael != 'undefined') {
    ******************/
 
   var RaphaelHandTheme = function(diagram, options, resume) {
+    this.element = element;
     this.init(diagram, _.defaults(options, {
               'font-size': 16,
               'font-family': 'daniel'
