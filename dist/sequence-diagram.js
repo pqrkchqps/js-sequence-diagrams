@@ -1330,9 +1330,16 @@ if (typeof Snap != 'undefined') {
             var that = this;
             this.waitForFont(function() {
               resume(that);
+<<<<<<< HEAD
               var svg = that.element.children[0];
               svg.setAttribute("viewBox", "0 0 "+svg.getBBox().width+" "+svg.getBBox().height);
               svg.setAttribute("preserveAspectRatio", "xMinYMax meet");
+=======
+
+              var svg = that.element.children[0];
+              svg.setAttribute('viewBox', '0 0 ' + svg.getBBox().width + ' ' + svg.getBBox().height);
+              svg.setAttribute('preserveAspectRatio', 'xMinYMax meet');
+>>>>>>> 35b99c66455327761adcba02960bbb4af6c41a56
               svg.removeAttribute('width');
               svg.removeAttribute('height');
             });
@@ -1622,6 +1629,11 @@ if (typeof Raphael != 'undefined') {
       l[LINETYPE.DOTTED] = '-';
 
       resume(this);
+      var svg = that.element.children[0];
+      svg.setAttribute('viewBox', '0 0 ' + svg.getBBox().width + ' ' + svg.getBBox().height);
+      svg.setAttribute('preserveAspectRatio', 'xMinYMax meet');
+      svg.removeAttribute('width');
+      svg.removeAttribute('height');
     },
 
     setupPaper: function(container) {

@@ -43,5 +43,5 @@ Diagram.prototype.drawSVG = function(container, options) {
   var Theme = Diagram.themes[options.theme];
   new Theme(this, options, function(drawing) {
       drawing.draw(div);
-    });
+    }, container);
 }; // end of drawSVG
