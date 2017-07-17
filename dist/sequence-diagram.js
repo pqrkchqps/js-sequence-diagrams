@@ -1297,13 +1297,13 @@ if (typeof Snap != 'undefined') {
    * SnapTheme
    ******************/
 
-  var SnapTheme = function(diagram, options, resume) {
+  var SnapTheme = function(diagram, options, resume, element) {
         _.defaults(options, {
             'css-class': 'simple',
             'font-size': 16,
             'font-family': 'Andale Mono, monospace'
           });
-
+        this.element = element;
         this.init(diagram, options, resume);
       };
 
@@ -1596,7 +1596,8 @@ if (typeof Raphael != 'undefined') {
    * RaphaelTheme
    ******************/
 
-  var RaphaelTheme = function(diagram, options, resume) {
+  var RaphaelTheme = function(diagram, options, resume, element) {
+        this.element = element;
         this.init(diagram, _.defaults(options, {
             'font-size': 16,
             'font-family': 'Andale Mono, monospace'

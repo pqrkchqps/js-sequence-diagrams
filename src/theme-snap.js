@@ -27,13 +27,13 @@ if (typeof Snap != 'undefined') {
    * SnapTheme
    ******************/
 
-  var SnapTheme = function(diagram, options, resume) {
+  var SnapTheme = function(diagram, options, resume, element) {
         _.defaults(options, {
             'css-class': 'simple',
             'font-size': 16,
             'font-family': 'Andale Mono, monospace'
           });
-
+        this.element = element;
         this.init(diagram, options, resume);
       };
 
